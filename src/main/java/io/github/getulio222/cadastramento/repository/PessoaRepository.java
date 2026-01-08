@@ -14,4 +14,6 @@ public interface PessoaRepository extends JpaRepository<Pessoa, Long> {
     boolean existsByCpf(String cpf);
     Optional<Pessoa> findByCpf(String cpf);
     List<Pessoa> findByNomeContainingIgnoreCase(String nome);
+
+    boolean existsByCpfAndIdNot(String cpf, Long id);
 }

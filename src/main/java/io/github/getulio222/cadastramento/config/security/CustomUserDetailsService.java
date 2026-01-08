@@ -18,13 +18,13 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        if (!"admin".equals(username)) {
+        if (!"dev1".equals(username)) {
             throw new UsernameNotFoundException("Usuário não encontrado");
         }
 
         return org.springframework.security.core.userdetails.User
-                .withUsername("admin")
-                .password(passwordEncoder.encode("123456")) // ✅ agora bate
+                .withUsername("dev1")
+                .password(passwordEncoder.encode("devpassword"))
                 .roles("USER")
                 .build();
     }
