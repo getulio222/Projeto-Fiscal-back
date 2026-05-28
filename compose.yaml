@@ -1,0 +1,9 @@
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: projeto_fiscal
+      POSTGRES_USER: fiscal
+      POSTGRES_PASSWORD: fiscal
+    ports:
+      - "5432:5432"
