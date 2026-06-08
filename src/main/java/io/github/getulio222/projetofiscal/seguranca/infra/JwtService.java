@@ -1,4 +1,4 @@
-package io.github.getulio222.projetofiscal.cliente.seguranca.infra;
+package io.github.getulio222.projetofiscal.seguranca.infra;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;

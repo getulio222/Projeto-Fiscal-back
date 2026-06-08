@@ -1,4 +1,4 @@
-package io.github.getulio222.projetofiscal.cliente.seguranca.api.dto;
+package io.github.getulio222.projetofiscal.seguranca.api.dto;
 
 import jakarta.validation.constraints.NotBlank;
 
