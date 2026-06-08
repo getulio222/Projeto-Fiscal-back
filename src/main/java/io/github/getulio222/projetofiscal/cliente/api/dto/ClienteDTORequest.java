@@ -1,11 +1,11 @@
-package io.github.getulio222.projetofiscal.dto.pessoa;
+package io.github.getulio222.projetofiscal.cliente.api.dto;
 
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import org.hibernate.validator.constraints.br.CPF;
 
-public record PessoaDTORequest(
+public record ClienteDTORequest(
         @NotBlank
         @Size(max = 100)
         String nome,

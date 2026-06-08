@@ -1,7 +1,8 @@
-package io.github.getulio222.projetofiscal.config.security;
+package io.github.getulio222.projetofiscal.cliente.seguranca.application;
 
-import io.github.getulio222.projetofiscal.dto.auth.LoginDTORequest;
-import io.github.getulio222.projetofiscal.dto.auth.TokenDTOResponse;
+import io.github.getulio222.projetofiscal.cliente.seguranca.api.dto.LoginDTORequest;
+import io.github.getulio222.projetofiscal.cliente.seguranca.api.dto.TokenDTOResponse;
+import io.github.getulio222.projetofiscal.cliente.seguranca.infra.JwtService;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
