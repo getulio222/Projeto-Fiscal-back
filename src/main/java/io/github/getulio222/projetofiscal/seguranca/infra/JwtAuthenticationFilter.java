@@ -1,4 +1,4 @@
-package io.github.getulio222.projetofiscal.cliente.seguranca.infra;
+package io.github.getulio222.projetofiscal.seguranca.infra;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

@@ -21,14 +21,12 @@ public class ClienteService {
 
     public ClienteDTOResponse salvar(ClienteDTORequest dto) {
 
-        if (clienteRepository.existsByCpfCnpj(dto.cpf())) {
+        if (clienteRepository.existsByCpfCnpj(dto.cpfCnpj())) {
             throw new RuntimeException("CPF/CNPJ já cadastrado");
         }
 
         Cliente cliente = new Cliente();
-        cliente.setNomeRazaoSocial(dto.nome());
-        cliente.setCpfCnpj(dto.cpf());
-        cliente.setCidade(dto.cidade());
+        preencherCliente(cliente, dto);
 
         Cliente saved = clienteRepository.save(cliente);
         return mapToResponse(saved);
@@ -67,15 +65,11 @@ public class ClienteService {
         Cliente cliente = clienteRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException(MSG_DADOS_NAO_LOCALIZADO));
 
-        String novoCpfCnpj = dto.cpf();
-
-        if (clienteRepository.existsByCpfCnpjAndIdNot(novoCpfCnpj, id)) {
+        if (clienteRepository.existsByCpfCnpjAndIdNot(dto.cpfCnpj(), id)) {
             throw new RuntimeException("CPF/CNPJ já cadastrado");
         }
 
-        cliente.setNomeRazaoSocial(dto.nome());
-        cliente.setCpfCnpj(novoCpfCnpj);
-        cliente.setCidade(dto.cidade());
+        preencherCliente(cliente, dto);
 
         Cliente updated = clienteRepository.save(cliente);
         return mapToResponse(updated);
@@ -88,12 +82,28 @@ public class ClienteService {
         clienteRepository.delete(cliente);
     }
 
+    private void preencherCliente(Cliente cliente, ClienteDTORequest dto) {
+        cliente.setTipoPessoa(dto.tipoPessoa());
+        cliente.setNomeRazaoSocial(dto.nomeRazaoSocial());
+        cliente.setCpfCnpj(dto.cpfCnpj());
+        cliente.setPais(dto.pais());
+        cliente.setUf(dto.uf());
+        cliente.setCidade(dto.cidade());
+        cliente.setEndereco(dto.endereco());
+        cliente.setTelefone(dto.telefone());
+    }
+
     private ClienteDTOResponse mapToResponse(Cliente cliente) {
         return new ClienteDTOResponse(
                 cliente.getId(),
+                cliente.getTipoPessoa(),
                 cliente.getNomeRazaoSocial(),
                 cliente.getCpfCnpj(),
-                cliente.getCidade()
+                cliente.getPais(),
+                cliente.getUf(),
+                cliente.getCidade(),
+                cliente.getEndereco(),
+                cliente.getTelefone()
         );
     }
 }

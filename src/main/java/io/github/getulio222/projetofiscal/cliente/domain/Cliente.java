@@ -36,9 +36,4 @@ public class Cliente {
 
     @Column(length = 11)
     private String Telefone;
-
-
-
-
-
 }

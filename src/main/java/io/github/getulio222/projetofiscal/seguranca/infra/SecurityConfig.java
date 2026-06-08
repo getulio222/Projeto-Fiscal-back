@@ -1,4 +1,4 @@
-package io.github.getulio222.projetofiscal.cliente.seguranca.infra;
+package io.github.getulio222.projetofiscal.seguranca.infra;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
