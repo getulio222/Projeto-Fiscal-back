@@ -1,4 +1,4 @@
-package io.github.getulio222.projetofiscal.config.security;
+package io.github.getulio222.projetofiscal.cliente.seguranca.infra;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

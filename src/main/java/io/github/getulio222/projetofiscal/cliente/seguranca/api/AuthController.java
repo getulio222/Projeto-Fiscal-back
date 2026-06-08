@@ -1,7 +1,8 @@
-package io.github.getulio222.projetofiscal.config.security;
+package io.github.getulio222.projetofiscal.cliente.seguranca.api;
 
-import io.github.getulio222.projetofiscal.dto.auth.LoginDTORequest;
-import io.github.getulio222.projetofiscal.dto.auth.TokenDTOResponse;
+import io.github.getulio222.projetofiscal.cliente.seguranca.api.dto.LoginDTORequest;
+import io.github.getulio222.projetofiscal.cliente.seguranca.api.dto.TokenDTOResponse;
+import io.github.getulio222.projetofiscal.cliente.seguranca.application.AuthService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
