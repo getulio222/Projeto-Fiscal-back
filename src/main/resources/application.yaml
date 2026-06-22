@@ -13,9 +13,11 @@ spring:
       hibernate:
         format_sql: true
 
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${KEYCLOAK_ISSUER_URI:http://localhost:8180/realms/projeto-fiscal}
+
 server:
   port: 8080
-
-jwt:
-  secret: minha-chave-jwt-super-segura-com-mais-de-32-bytes-123456
-  expiration: 86400000

@@ -1,0 +1,51 @@
+{
+  "realm": "projeto-fiscal",
+  "displayName": "Projeto Fiscal",
+  "enabled": true,
+  "loginTheme": "projeto-fiscal",
+  "registrationAllowed": false,
+  "resetPasswordAllowed": true,
+  "rememberMe": true,
+  "verifyEmail": false,
+  "roles": {
+    "realm": [
+      { "name": "ADMIN", "description": "Acesso administrativo completo" },
+      { "name": "OPERADOR", "description": "Consulta e manutenção de clientes" },
+      { "name": "CONSULTA", "description": "Acesso somente para consulta" }
+    ]
+  },
+  "clients": [
+    {
+      "clientId": "projeto-fiscal-front",
+      "name": "Projeto Fiscal Frontend",
+      "enabled": true,
+      "publicClient": true,
+      "protocol": "openid-connect",
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": false,
+      "serviceAccountsEnabled": false,
+      "rootUrl": "http://localhost:4200",
+      "baseUrl": "http://localhost:4200",
+      "redirectUris": ["http://localhost:4200/*"],
+      "webOrigins": ["http://localhost:4200"],
+      "attributes": {
+        "pkce.code.challenge.method": "S256"
+      },
+      "defaultClientScopes": ["web-origins", "acr", "roles", "profile", "basic", "email"]
+    }
+  ],
+  "users": [
+    {
+      "username": "fiscal",
+      "firstName": "Administrador",
+      "lastName": "Fiscal",
+      "email": "fiscal@localhost",
+      "enabled": true,
+      "emailVerified": true,
+      "credentials": [
+        { "type": "password", "value": "fiscal", "temporary": true }
+      ],
+      "realmRoles": ["ADMIN"]
+    }
+  ]
+}
