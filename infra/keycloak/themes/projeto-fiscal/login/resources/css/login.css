@@ -1,0 +1,43 @@
+:root {
+  --fiscal-primary: #0b79ff;
+  --fiscal-background: #f4f6f8;
+  --fiscal-text: #172033;
+}
+
+body,
+.login-pf body {
+  background: var(--fiscal-background);
+  color: var(--fiscal-text);
+  font-family: Arial, sans-serif;
+}
+
+#kc-header-wrapper {
+  color: var(--fiscal-text);
+  font-size: 0;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+#kc-header-wrapper::after {
+  content: "Projeto Fiscal";
+  font-size: 28px;
+}
+
+.card-pf {
+  border: 0;
+  border-radius: 12px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+  background: var(--fiscal-primary);
+  border-color: var(--fiscal-primary);
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.form-control {
+  border-radius: 8px;
+  min-height: 44px;
+}
